@@ -11,6 +11,7 @@ services:
         - ./log/:/var/log/rabbitmq
     networks:
         - rabbitmq_go_net
+    command: ["bash", "-c", "chmod 400 /var/lib/rabbitmq/.erlang.cookie; rabbitmq-server"]
 
 networks:
   rabbitmq_go_net:
